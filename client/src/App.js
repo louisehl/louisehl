@@ -59,7 +59,7 @@ class App extends Component {
           </Header.Content>
         </Header>
         <Container textAlign='center' style={{color: 'gray'}}>
-          Books I have read and will read soonish listed by author
+          Books I have read and will read soonish listed by genre
         </Container>
         <Divider hidden section />
         {authors && authors.length
@@ -85,7 +85,7 @@ class App extends Component {
               {author.books.map((book, i) =>
                 <Item key={i}>
                   <Item.Content>
-                    <Item.Header color='olive'>{book.title}</Item.Header>
+                    <Item.Header>{book.title}</Item.Header>
                     <Item.Meta>
                       written by {book.authorname}
                     </Item.Meta>
