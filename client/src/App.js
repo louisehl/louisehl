@@ -42,12 +42,14 @@ class App extends Component {
     return authors
       ? <Container text>
         <Header as ='h2' icon textAlign='center' color='teal'>
-          <Icon name ='ordered list' circular />
+          <Icon name ='hand spock' circular />
           <Header.Content>
             LouiseHL
           </Header.Content>
-          Books I have read and will read soonish
         </Header>
+        <Container textAlign='center' style={{color: 'gray'}}>
+          Books I have read and will read soonish listed by author
+        </Container>
         <Divider hidden section />
 
         {authors && authors.length
