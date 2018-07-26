@@ -43,7 +43,7 @@ Devise.setup do |config|
   # config.authentication_keys = [:email]
 
 
-  config.secret_key = ENV['4713a80f731833ebeb66e165af3772fe887bfa75714cfc51d6bd0cc38a32efa05a4731c3a05d51971a0e5664bda8c84cc3f7fde8717b3d31b6640ca00bbb4a3b']
+  config.secret_key = '4713a80f731833ebeb66e165af3772fe887bfa75714cfc51d6bd0cc38a32efa05a4731c3a05d51971a0e5664bda8c84cc3f7fde8717b3d31b6640ca00bbb4a3b'
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
