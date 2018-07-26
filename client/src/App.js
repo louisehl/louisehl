@@ -42,12 +42,14 @@ class App extends Component {
     return authors
       ? <Container text>
         <Header as ='h2' icon textAlign='center' color='teal'>
-          <Icon name ='unordered list' circular />
+          <Icon name ='ordered list' circular />
           <Header.Content>
-            Books I have read and will read soon
+            LouiseHL
           </Header.Content>
+          Books I have read and will read soonish
         </Header>
         <Divider hidden section />
+
         {authors && authors.length
           ? <Button.Group color='teal' fluid widths={authors.length}>
             {Object.keys(authors).map((key) => {
