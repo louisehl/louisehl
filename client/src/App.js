@@ -80,11 +80,11 @@ class App extends Component {
               <Image src={author.image} circular /> {author.name}
             </Header>
             {author.description && <p>{author.description}</p>}
+            <Divider horizontal section>Books</Divider>
             <Item.Group>
               {author.books.map((book, i) =>
                 <Item key={i}>
                   <Item.Content>
-                    <Divider horizontal section>Books</Divider>
                     <Item.Header color='olive'>{book.title}</Item.Header>
                     <Item.Meta>
                       written by {book.authorname}
