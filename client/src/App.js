@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
+import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider, Image, Item } from 'semantic-ui-react'
 
 class App extends Component {
   constructor () {
@@ -37,14 +37,25 @@ class App extends Component {
       .then(author => this.setState({author: author}))
   }
 
+  getStars(num) {
+    for (var i = 0; i < 10; i++) {
+      if (i < num) {
+        <Icon name='star' size='tiny'/>
+      } else {
+        <Icon name='star outline' size='tiny'/>
+      }
+    }
+  }
+
   render () {
     let {authors, author} = this.state
     return authors
       ? <Container text>
-        <Header as ='h2' icon textAlign='center' color='teal'>
+        <Header as ='h1' icon textAlign='center' color='teal'>
           <Icon name ='hand spock' circular />
           <Header.Content>
             LouiseHL
+            <Header.Subheader style={{color:'#b1c5c5'}}>Hessellund Lastein</Header.Subheader>
           </Header.Content>
         </Header>
         <Container textAlign='center' style={{color: 'gray'}}>
@@ -66,14 +77,33 @@ class App extends Component {
         <Divider section />
         {author &&
           <Container>
-            <Header as='h2'>{author.name}</Header>
-            <img src={author.image} alt="Photo of author"/>
+            <Header as='h2' textAlign='center'>
+              <Image circular src={author.image} /> {author.name}
+            </Header>
             {author.description && <p>{author.description}</p>}
-            {author.books &&
-              <Segment.Group>
-                {author.books.map((book, i) => <Segment key={i}>{book.title}</Segment>)}
-              </Segment.Group>
-            }
+            <Item.Group>
+              {author.books.map((book, i) =>
+                <Item key={i}>
+                  <Item.Content>
+                    <Divider horizontal section>Books</Divider>
+                    <Item.Header color='olive'>{book.title}</Item.Header>
+                    <Item.Meta textAlign='center'>
+                      <Header as='h5'>My score:</Header>
+                      {book.stars} / 10
+                    </Item.Meta>
+                    <Item.Description>
+                      <Header as='h5'>Description:</Header>
+                      {book.description}
+                    </Item.Description>
+                    <Item.Extra>
+                      <Header as='h5'>Comments:</Header>
+                      {book.comment}
+                    </Item.Extra>
+                  </Item.Content>
+                </Item>
+              )}
+            </Item.Group>
+
 
           </Container>
         }
