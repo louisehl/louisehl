@@ -86,14 +86,17 @@ class App extends Component {
                   <Item.Content>
                     <Divider horizontal section>Books</Divider>
                     <Item.Header color='olive'>{book.title}</Item.Header>
-                    <Item.Meta textAlign='center'>
-                      <Header as='h5'>My score:</Header>
-                      {book.stars} / 10
+                    <Item.Meta>
+                      written by {book.authorname}
                     </Item.Meta>
                     <Item.Description>
                       <Header as='h5'>Description:</Header>
                       {book.description}
                     </Item.Description>
+                    <Item.Meta>
+                      <Header as='h5'>My score:</Header>
+                      {book.stars} / 10
+                    </Item.Meta>
                     <Item.Extra>
                       <Header as='h5'>Comments:</Header>
                       {book.comment}
