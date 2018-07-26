@@ -62,7 +62,6 @@ class App extends Component {
           Books I have read and will read soonish listed by author
         </Container>
         <Divider hidden section />
-
         {authors && authors.length
           ? <Button.Group color='teal' fluid widths={authors.length}>
             {Object.keys(authors).map((key) => {
@@ -78,7 +77,7 @@ class App extends Component {
         {author &&
           <Container>
             <Header as='h2' textAlign='center'>
-              <Image circular src={author.image} /> {author.name}
+              <Image src={author.image} circular /> {author.name}
             </Header>
             {author.description && <p>{author.description}</p>}
             <Item.Group>
@@ -99,12 +98,11 @@ class App extends Component {
                       <Header as='h5'>Comments:</Header>
                       {book.comment}
                     </Item.Extra>
+                    <Divider section/>
                   </Item.Content>
                 </Item>
               )}
             </Item.Group>
-
-
           </Container>
         }
       </Container>
