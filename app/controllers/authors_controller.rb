@@ -9,6 +9,6 @@ class AuthorsController < ApiController
   # GET /authors/1
   def show
     @author = Author.find(params[:id])
-    render json: @author.to_json(:include => { :books => { :only => [:id, :title, :description, :stars, :comment] }})
+    render json: @author.to_json(:include => { :books => { :only => [:id, :title, :authorname, :description, :stars, :comment] }})
   end
 end
