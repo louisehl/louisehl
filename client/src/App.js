@@ -36,17 +36,7 @@ class App extends Component {
     this.fetch(`/api/authors/${id}`)
       .then(author => this.setState({author: author}))
   }
-
-  getStars(num) {
-    for (var i = 0; i < 10; i++) {
-      if (i < num) {
-        <Icon name='star' size='tiny'/>
-      } else {
-        <Icon name='star outline' size='tiny'/>
-      }
-    }
-  }
-
+  
   render () {
     let {authors, author} = this.state
     return authors
